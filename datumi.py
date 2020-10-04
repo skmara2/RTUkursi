@@ -1,9 +1,10 @@
-datums="10/12/10"
+datums="31/02/9"
 dat= list(datums.split("/"))
 print("1.gadijums ",dat)
 isais=[4,6,9,11]
 garais=[1,3,5,7,8,10,12]
 varianti=[]
+
 def gg(x):
     if x%4==0:
         dd=29
@@ -28,23 +29,22 @@ def parb(a,b,c):
 if dat[0]==dat[1]==dat[2]:
     varianti.append(1)
 else:
-    parb(int(dat[0]),int(dat[1]),int(dat[2]))
+    a=int(dat[0])
+    b=int(dat[1])
+    c=int(dat[2])
+
+    parb(a,b,c)
     print(varianti)
-    dat[0],dat[1]=dat[1],dat[0]
-    print("2.gadijums ",dat)
-    parb(int(dat[0]),int(dat[1]),int(dat[2]))
-    dat[1],dat[2]=dat[2],dat[1]
-    print("3.gadijums ",dat)
-    parb(int(dat[0]),int(dat[1]),int(dat[2]))
-    dat[0],dat[1]=dat[1],dat[0]
-    print("4.gadijums ",dat)
-    parb(int(dat[0]),int(dat[1]),int(dat[2]))
-    dat[2],dat[1]=dat[1],dat[2]
-    print("5.gadijums ",dat)
-    parb(int(dat[0]),int(dat[1]),int(dat[2]))
-    dat[0],dat[1]=dat[1],dat[0]
-    print("6.gadijums ",dat)
-    parb(int(dat[0]),int(dat[1]),int(dat[2]))
+    print("2.gadijums ",b,a,c)
+    parb(b,a,c)
+    print("3.gadijums ",c,b,a)
+    parb(c,b,a)
+    print("4.gadijums ",b,c,a)
+    parb(b,c,a)
+    print("5.gadijums ",b,a,c)
+    parb(b,a,c)
+    print("6.gadijums ",c,a,b)
+    parb(c,a,b)
     print(varianti)
 
 atbilde=sum(varianti)
