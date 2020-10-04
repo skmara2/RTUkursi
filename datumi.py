@@ -1,4 +1,4 @@
-datums="31/02/9"
+datums="2/29/99"
 dat= list(datums.split("/"))
 print("1.gadijums ",dat)
 isais=[4,6,9,11]
@@ -7,10 +7,10 @@ varianti=[]
 
 def gg(x):
     if x%4==0:
-        dd=29
+        dienas=29
     else:
-        dd=28
-    return dd
+        dienas=28
+    return dienas
 
 def parb(a,b,c):
     if a in isais and b<=30:
@@ -26,7 +26,7 @@ def parb(a,b,c):
             print("3 ",varianti)
     return varianti
 
-if dat[0]==dat[1]==dat[2]:
+if int(dat[0])==int(dat[1])==int(dat[2])<=12:
     varianti.append(1)
 else:
     a=int(dat[0])
@@ -35,16 +35,19 @@ else:
 
     parb(a,b,c)
     print(varianti)
-    print("2.gadijums ",b,a,c)
-    parb(b,a,c)
+    if a!=b:
+        print("2.gadijums ",b,a,c)
+        parb(b,a,c)
     print("3.gadijums ",c,b,a)
     parb(c,b,a)
-    print("4.gadijums ",b,c,a)
-    parb(b,c,a)
-    print("5.gadijums ",b,a,c)
-    parb(b,a,c)
-    print("6.gadijums ",c,a,b)
-    parb(c,a,b)
+    if c!=b:
+        print("4.gadijums ",b,c,a)
+        parb(b,c,a)
+    print("5.gadijums ",a,c,b)
+    parb(a,c,b)
+    if a!=c:
+        print("6.gadijums ",c,a,b)
+        parb(c,a,b)
     print(varianti)
 
 atbilde=sum(varianti)
